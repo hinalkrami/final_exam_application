@@ -1,0 +1,22 @@
+{
+  "login": "Login",
+  "phoneNumber": "Phone Number",
+  "singUp": "Sing up",
+  "somethingWentWrongTryAgainAfterSomeTimes": "Something went wrong try again after  some times...",
+  "requestCanNotBeHandleTryAfterSometimes": "Request can not be handle try after sometimes..",
+  "requestedServerIsCanceled": "Requested server is canceled",
+  "connectionTimeOutWithServer": "Connection time out with server",
+  "errorDuringCommunication": "Error during communication",
+  "invalidRequest": "Invalid Request",
+  "invalidInput": "Invalid Input",
+  "serverSideError": "Server side error",
+  "signUp": "Sign Up",
+  "fullName": "Full Name",
+  "userName": "User Name",
+  "dob": "DOB",
+  "email": "Email",
+  "profilePage": "Profile Page",
+  "chooseFromGallery": "Choose from gallery",
+  "takePhoto": "Take photo",
+  "complete25": "25% COMPLETE"
+}

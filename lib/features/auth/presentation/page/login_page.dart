@@ -1,5 +1,6 @@
 import 'package:final_exam_application/core/Exception/app_exception.dart';
 import 'package:final_exam_application/features/auth/data/model/login_model.dart';
+import 'package:final_exam_application/features/auth/data/model/user_model.dart';
 import 'package:final_exam_application/features/auth/presentation/page/sign_up_page.dart';
 import 'package:final_exam_application/features/auth/presentation/providers/auth_provider.dart';
 import 'package:final_exam_application/features/auth/presentation/widgets/custom_background.dart';
@@ -45,7 +46,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     super.dispose();
   }
 
-  void login() {
+  void login() async {
     if (!_formKey.currentState!.validate()) {
       ref.read(isValidatedProvider.notifier).state = true;
     } else {
@@ -56,9 +57,8 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         statusCode: () => ref.read(authProvider.notifier).statusCode,
         message: () => ref.read(authProvider.notifier).message,
       );
-      if (ref.read(authProvider.notifier).statusCode == 200) {
-        context.go('/profile');
-      }
+      if (!mounted) return;
+      context.go('/profile/6');
     }
   }
 

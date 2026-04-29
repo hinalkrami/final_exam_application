@@ -1,3 +1,5 @@
+import 'package:final_exam_application/core/Exception/app_exception.dart';
+import 'package:final_exam_application/features/auth/presentation/providers/auth_provider.dart';
 import 'package:final_exam_application/values/colors.dart';
 import 'package:final_exam_application/values/text_style.dart';
 import 'package:flutter/material.dart';
@@ -8,13 +10,30 @@ import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
 
 class ProfilePage extends ConsumerStatefulWidget {
-  const ProfilePage({super.key});
+  ProfilePage({super.key, required this.id});
+  int id;
 
   @override
   ConsumerState createState() => _HomePageState();
 }
 
 class _HomePageState extends ConsumerState<ProfilePage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getSingleUser(widget.id);
+  }
+
+  void getSingleUser(int id) {
+    AppException.handleApiCall(
+      context: context,
+      apiCall: () => ref.read(authProvider.notifier).singleUserData(id),
+      statusCode: () => ref.read(authProvider.notifier).statusCode,
+      message: () => ref.read(authProvider.notifier).message,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

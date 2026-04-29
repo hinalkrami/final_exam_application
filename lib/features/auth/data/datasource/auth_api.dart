@@ -18,4 +18,7 @@ abstract class AuthApi {
 
   @POST(ApiEndpoints.signUp)
   Future<UserResultModel> signUp(@Body() UserModel? user);
+
+  @GET('${ApiEndpoints.getSingleUser}/{id}')
+  Future<UserResultModel> getSingleUser(@Path() int? id);
 }

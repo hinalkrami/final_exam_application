@@ -28,4 +28,14 @@ class AuthRepositoriesImpl extends AuthRepositories {
       statusCode: userResponse.statusCode,
     );
   }
+
+  @override
+  Future<UserResultModel<UserModel>> singleUser(int? id) async {
+    final userResponse = await authApi.getSingleUser(id);
+    return UserResultModel(
+      data: UserModel.fromJson(userResponse.data),
+      message: userResponse.message,
+      statusCode: userResponse.statusCode,
+    );
+  }
 }

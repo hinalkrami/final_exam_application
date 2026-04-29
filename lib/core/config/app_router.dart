@@ -8,7 +8,12 @@ class AppRouter {
     routes: <RouteBase>[
       GoRoute(path: '/', builder: (context, state) => LoginPage()),
       GoRoute(path: '/auth/signUp', builder: (context, state) => SignUpPage()),
-      GoRoute(path: '/profile', builder: (context, state) => ProfilePage()),
+      GoRoute(
+        path: '/profile/:id',
+        builder: (context, state) {
+          return ProfilePage(id: int.parse(state.pathParameters['id']!));
+        },
+      ),
     ],
   );
 }

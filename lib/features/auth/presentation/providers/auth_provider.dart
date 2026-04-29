@@ -33,4 +33,10 @@ class AuthProvider extends AsyncNotifier<UserResultModel> {
     state = await AsyncValue.guard(() async => await ref.read(repositoryProvider).signUp(user));
     return state.requireValue;
   }
+
+  Future<UserResultModel> singleUserData(int? id) async {
+    state = AsyncValue.loading();
+    state = await AsyncValue.guard(() async => await ref.read(repositoryProvider).singleUser(id));
+    return state.requireValue;
+  }
 }

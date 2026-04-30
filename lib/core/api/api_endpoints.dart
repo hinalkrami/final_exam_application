@@ -3,5 +3,9 @@ class ApiEndpoints {
   static const String login = '/social/login';
 
   static const String signUp = '/social/signup';
-  static const String getSingleUser = 'social/profile';
+  static const String getSingleUser = '/social/profile';
+
+  static const String logout = '/social/logout';
+
+  static const String getComments = '/social/posts/';
 }

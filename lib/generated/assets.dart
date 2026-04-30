@@ -15,8 +15,15 @@ class $AssetsImagesGen {
   const $AssetsImagesGen();
 
   final SvgGenImage bgHeart = const SvgGenImage('assets/images/bg_heart.svg');
+  final SvgGenImage likeComments = const SvgGenImage('assets/images/like_comments.svg');
   final SvgGenImage logo = const SvgGenImage('assets/images/logo.svg');
+  final SvgGenImage profileBgCircle = const SvgGenImage('assets/images/profile_bg_circle.svg');
   final AssetGenImage profileImage = const AssetGenImage('assets/images/profile_image.jpg');
+  final AssetGenImage profileImage1 = const AssetGenImage('assets/images/profile_image_1.jpg');
+  final AssetGenImage profileImage2 = const AssetGenImage('assets/images/profile_image_2.jpg');
+  final AssetGenImage profileImage3 = const AssetGenImage('assets/images/profile_image_3.jpg');
+  final AssetGenImage profileImage4 = const AssetGenImage('assets/images/profile_image_4.jpg');
+  final AssetGenImage profileImage5 = const AssetGenImage('assets/images/profile_image_5.jpg');
 }
 
 class $AssetsFontsGen {
@@ -40,8 +47,15 @@ class $AssetsIconsGen {
   final SvgGenImage atIcon = const SvgGenImage('assets/icons/at_icon.svg');
   final SvgGenImage backArrowIcon = const SvgGenImage('assets/icons/back_arrow_icon.svg');
   final SvgGenImage calanderIcon = const SvgGenImage('assets/icons/calander_icon.svg');
+  final SvgGenImage chatIcon = const SvgGenImage('assets/icons/chat_icon.svg');
+  final SvgGenImage deleteIcon = const SvgGenImage('assets/icons/delete_icon.svg');
   final SvgGenImage editIcon = const SvgGenImage('assets/icons/edit_icon.svg');
+  final SvgGenImage editIconBlack = const SvgGenImage('assets/icons/edit_icon_black.svg');
+  final SvgGenImage likeIcon = const SvgGenImage('assets/icons/like_icon.svg');
+  final SvgGenImage location = const SvgGenImage('assets/icons/location.svg');
   final SvgGenImage phoneIcon = const SvgGenImage('assets/icons/phone_icon.svg');
+  final SvgGenImage playIcon = const SvgGenImage('assets/icons/play_icon.svg');
+  final SvgGenImage sendIcon = const SvgGenImage('assets/icons/send_icon.svg');
   final SvgGenImage userIcon = const SvgGenImage('assets/icons/user_icon.svg');
 }
 

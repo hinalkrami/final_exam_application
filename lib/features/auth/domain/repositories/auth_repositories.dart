@@ -6,5 +6,4 @@ import '../../data/model/user_result_model.dart';
 abstract class AuthRepositories {
   Future<UserResultModel<UserModel>> login(LoginModel loginUser);
   Future<UserResultModel<UserModel>> signUp(UserModel userModel);
-  Future<UserResultModel<UserModel>> singleUser(int? id);
 }

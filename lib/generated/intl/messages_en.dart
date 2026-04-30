@@ -22,24 +22,51 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "MinAgo15": MessageLookupByLibrary.simpleMessage("15 min ago"),
+    "aBoyfriend": MessageLookupByLibrary.simpleMessage("A Boyfriend"),
+    "about": MessageLookupByLibrary.simpleMessage("About"),
+    "aboutMe": MessageLookupByLibrary.simpleMessage("About me"),
+    "book": MessageLookupByLibrary.simpleMessage("📚 Book"),
     "chooseFromGallery": MessageLookupByLibrary.simpleMessage(
       "Choose from gallery",
     ),
+    "comment": MessageLookupByLibrary.simpleMessage("Comment"),
+    "comments": MessageLookupByLibrary.simpleMessage("Comments"),
     "complete25": MessageLookupByLibrary.simpleMessage("25% COMPLETE"),
     "connectionTimeOutWithServer": MessageLookupByLibrary.simpleMessage(
       "Connection time out with server",
     ),
+    "dancing": MessageLookupByLibrary.simpleMessage("💃 Dancing"),
+    "dataNotFound": MessageLookupByLibrary.simpleMessage("Data Not Found"),
+    "delete": MessageLookupByLibrary.simpleMessage("Delete"),
     "dob": MessageLookupByLibrary.simpleMessage("DOB"),
+    "edit": MessageLookupByLibrary.simpleMessage("Edit"),
+    "editProfile": MessageLookupByLibrary.simpleMessage("Edit Profile"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "errorDuringCommunication": MessageLookupByLibrary.simpleMessage(
       "Error during communication",
     ),
+    "feed": MessageLookupByLibrary.simpleMessage("Feed"),
     "fullName": MessageLookupByLibrary.simpleMessage("Full Name"),
+    "gaming": MessageLookupByLibrary.simpleMessage("🎮 Gaming"),
+    "imDating": MessageLookupByLibrary.simpleMessage("I’m Dating"),
+    "imLookingFor": MessageLookupByLibrary.simpleMessage("I’m Looking For"),
+    "interest": MessageLookupByLibrary.simpleMessage("Interest"),
     "invalidInput": MessageLookupByLibrary.simpleMessage("Invalid Input"),
     "invalidRequest": MessageLookupByLibrary.simpleMessage("Invalid Request"),
     "login": MessageLookupByLibrary.simpleMessage("Login"),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "losAngeles20MileAway": MessageLookupByLibrary.simpleMessage(
+      "Los Angeles • 20 mile away",
+    ),
+    "movie": MessageLookupByLibrary.simpleMessage("🎬 Movie"),
+    "music": MessageLookupByLibrary.simpleMessage("🎵 Music"),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "profilePage": MessageLookupByLibrary.simpleMessage("Profile Page"),
+    "profilePicture": MessageLookupByLibrary.simpleMessage("Profile picture"),
+    "relationshipStatus": MessageLookupByLibrary.simpleMessage(
+      "Relationship Status",
+    ),
     "requestCanNotBeHandleTryAfterSometimes":
         MessageLookupByLibrary.simpleMessage(
           "Request can not be handle try after sometimes..",
@@ -47,6 +74,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "requestedServerIsCanceled": MessageLookupByLibrary.simpleMessage(
       "Requested server is canceled",
     ),
+    "seeAll": MessageLookupByLibrary.simpleMessage("See All"),
     "serverSideError": MessageLookupByLibrary.simpleMessage(
       "Server side error",
     ),

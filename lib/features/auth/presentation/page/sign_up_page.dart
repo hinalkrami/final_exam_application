@@ -163,12 +163,12 @@ class _SingUpPageState extends ConsumerState<SignUpPage> {
           child: Stack(
             children: [
               CustomBackground(),
-              InkWell(
-                onTap: _onTap,
-                child: Positioned(
-                  top: 50.h,
-                  left: 120.w,
-                  width: 1.sw * 0.5,
+              Positioned(
+                top: 50.h,
+                left: 120.w,
+                width: 1.sw * 0.5,
+                child: InkWell(
+                  onTap: _onTap,
                   child: Stack(
                     children: [
                       Container(
@@ -340,7 +340,7 @@ class _SingUpPageState extends ConsumerState<SignUpPage> {
         backgroundColor: AppColors.primaryColor.withAlpha(90),
         foregroundColor: Colors.white,
         fixedSize: Size(1.sw * 0.7, 1.sh * 0.06),
-        textStyle: AppTextStyle.boldText.copyWith(color: Colors.white),
+        textStyle: AppTextStyle.mediumText.copyWith(color: Colors.white),
       ),
       onPressed: onPressed,
       label: Text(label!),

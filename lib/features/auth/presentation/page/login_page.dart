@@ -46,7 +46,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
     super.dispose();
   }
 
-  void login() async {
+  Future<void> login() async {
     if (!_formKey.currentState!.validate()) {
       ref.read(isValidatedProvider.notifier).state = true;
     } else {
@@ -56,9 +56,10 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         apiCall: () => ref.read(authProvider.notifier).loginData(loginUser),
         statusCode: () => ref.read(authProvider.notifier).statusCode,
         message: () => ref.read(authProvider.notifier).message,
-      );
-      if (!mounted) return;
-      context.go('/profile/6');
+      ).then((value) {
+        if (!mounted) return;
+        context.go('/profile');
+      });
     }
   }
 

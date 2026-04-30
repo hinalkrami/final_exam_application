@@ -208,6 +208,156 @@ class S {
   String get complete25 {
     return Intl.message('25% COMPLETE', name: 'complete25', desc: '', args: []);
   }
+
+  /// `Edit Profile`
+  String get editProfile {
+    return Intl.message(
+      'Edit Profile',
+      name: 'editProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Los Angeles • 20 mile away`
+  String get losAngeles20MileAway {
+    return Intl.message(
+      'Los Angeles • 20 mile away',
+      name: 'losAngeles20MileAway',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Interest`
+  String get interest {
+    return Intl.message('Interest', name: 'interest', desc: '', args: []);
+  }
+
+  /// `🎮 Gaming`
+  String get gaming {
+    return Intl.message('🎮 Gaming', name: 'gaming', desc: '', args: []);
+  }
+
+  /// `💃 Dancing`
+  String get dancing {
+    return Intl.message('💃 Dancing', name: 'dancing', desc: '', args: []);
+  }
+
+  /// `🎵 Music`
+  String get music {
+    return Intl.message('🎵 Music', name: 'music', desc: '', args: []);
+  }
+
+  /// `🎬 Movie`
+  String get movie {
+    return Intl.message('🎬 Movie', name: 'movie', desc: '', args: []);
+  }
+
+  /// `📚 Book`
+  String get book {
+    return Intl.message('📚 Book', name: 'book', desc: '', args: []);
+  }
+
+  /// `I’m Looking For`
+  String get imLookingFor {
+    return Intl.message(
+      'I’m Looking For',
+      name: 'imLookingFor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A Boyfriend`
+  String get aBoyfriend {
+    return Intl.message('A Boyfriend', name: 'aBoyfriend', desc: '', args: []);
+  }
+
+  /// `Relationship Status`
+  String get relationshipStatus {
+    return Intl.message(
+      'Relationship Status',
+      name: 'relationshipStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I’m Dating`
+  String get imDating {
+    return Intl.message('I’m Dating', name: 'imDating', desc: '', args: []);
+  }
+
+  /// `About me`
+  String get aboutMe {
+    return Intl.message('About me', name: 'aboutMe', desc: '', args: []);
+  }
+
+  /// `Profile picture`
+  String get profilePicture {
+    return Intl.message(
+      'Profile picture',
+      name: 'profilePicture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `See All`
+  String get seeAll {
+    return Intl.message('See All', name: 'seeAll', desc: '', args: []);
+  }
+
+  /// `Data Not Found`
+  String get dataNotFound {
+    return Intl.message(
+      'Data Not Found',
+      name: 'dataNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `15 min ago`
+  String get MinAgo15 {
+    return Intl.message('15 min ago', name: 'MinAgo15', desc: '', args: []);
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message('Edit', name: 'edit', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message('Logout', name: 'logout', desc: '', args: []);
+  }
+
+  /// `About`
+  String get about {
+    return Intl.message('About', name: 'about', desc: '', args: []);
+  }
+
+  /// `Feed`
+  String get feed {
+    return Intl.message('Feed', name: 'feed', desc: '', args: []);
+  }
+
+  /// `Comments`
+  String get comments {
+    return Intl.message('Comments', name: 'comments', desc: '', args: []);
+  }
+
+  /// `Comment`
+  String get comment {
+    return Intl.message('Comment', name: 'comment', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

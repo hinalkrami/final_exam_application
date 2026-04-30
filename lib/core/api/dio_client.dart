@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:final_exam_application/core/api/api_endpoints.dart';
+import 'package:final_exam_application/features/comments/data/datasource/comments_api.dart';
+import 'package:final_exam_application/features/profile/data/datasource/profile_api.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import '../../features/auth/data/datasource/auth_api.dart';
@@ -12,6 +14,8 @@ class DioClient {
     final dio = await setUp();
     locators.registerSingleton(dio);
     locators.registerSingleton(AuthApi(dio));
+    locators.registerSingleton(ProfileApi(dio));
+    locators.registerSingleton(CommentsApi(dio));
   }
 
   static FutureOr<Dio> setUp() async {
@@ -25,7 +29,6 @@ class DioClient {
           "Accept": "application/json",
           "access-control-allow-origin": "*",
           "connection": "keep-alive",
-          "content-length": "334",
           "x-powered-by": "Express",
         },
       )

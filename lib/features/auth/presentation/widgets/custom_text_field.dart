@@ -42,7 +42,7 @@ class CustomTextField extends StatelessWidget {
       readOnly: readOnly,
       controller: controller,
       cursorColor: Colors.black,
-      style: AppTextStyle.mediumText,
+      style: AppTextStyle.regularText,
       inputFormatters: inputFormatter,
       initialValue: initValue,
       textCapitalization: .words,

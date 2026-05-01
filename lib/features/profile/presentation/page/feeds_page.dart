@@ -44,6 +44,8 @@ class _FeedsPageState extends ConsumerState<FeedsPage> {
         }
         Widget feedsHeader(int index) {
           return ListTile(
+            dense: true,
+            contentPadding: EdgeInsets.symmetric(horizontal: 0),
             leading: Container(
               height: 1.sh * 0.6,
               width: 1.sw * 0.13,

@@ -53,6 +53,7 @@ class $AssetsIconsGen {
   final SvgGenImage editIconBlack = const SvgGenImage('assets/icons/edit_icon_black.svg');
   final SvgGenImage likeIcon = const SvgGenImage('assets/icons/like_icon.svg');
   final SvgGenImage location = const SvgGenImage('assets/icons/location.svg');
+  final SvgGenImage nextIcon = const SvgGenImage('assets/icons/next_icon.svg');
   final SvgGenImage phoneIcon = const SvgGenImage('assets/icons/phone_icon.svg');
   final SvgGenImage playIcon = const SvgGenImage('assets/icons/play_icon.svg');
   final SvgGenImage sendIcon = const SvgGenImage('assets/icons/send_icon.svg');

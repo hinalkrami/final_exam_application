@@ -61,10 +61,19 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "movie": MessageLookupByLibrary.simpleMessage("🎬 Movie"),
     "music": MessageLookupByLibrary.simpleMessage("🎵 Music"),
+    "noActiveInternetconnection": MessageLookupByLibrary.simpleMessage(
+      "No active internetConnection",
+    ),
     "noDataAvailable": MessageLookupByLibrary.simpleMessage(
       "No data Available",
     ),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
+    "pleaseLoginAgain": MessageLookupByLibrary.simpleMessage(
+      "Please login again",
+    ),
+    "portfolioPicture": MessageLookupByLibrary.simpleMessage(
+      "Portfolio picture",
+    ),
     "profilePage": MessageLookupByLibrary.simpleMessage("Profile Page"),
     "profilePicture": MessageLookupByLibrary.simpleMessage("Profile picture"),
     "relationshipStatus": MessageLookupByLibrary.simpleMessage(
@@ -82,6 +91,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Server side error",
     ),
     "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "signup": MessageLookupByLibrary.simpleMessage("Sign up"),
     "singUp": MessageLookupByLibrary.simpleMessage("Sing up"),
     "somethingWentWrongTryAgainAfterSomeTimes":
         MessageLookupByLibrary.simpleMessage(

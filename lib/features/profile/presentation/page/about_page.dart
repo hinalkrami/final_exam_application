@@ -164,14 +164,14 @@ class _AboutPageState extends ConsumerState<AboutPage> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Text(S.of(context).profilePicture, style: headingTextStyle),
+                Text(S.of(context).portfolioPicture, style: headingTextStyle),
                 TextButton.icon(
                   onPressed: () {},
                   iconAlignment: .end,
                   label: Text(S.of(context).seeAll),
-                  icon: Icon(Icons.arrow_forward_sharp, weight: 12, size: 30.sp),
+                  icon: SvgPicture.asset(Assets.icons.nextIcon.path),
                   style: TextButton.styleFrom(
-                    foregroundColor: AppColors.primaryColor,
+                    foregroundColor: Color(0XFFEF4765),
                     textStyle: AppTextStyle.regularText,
                   ),
                 ),

@@ -1,4 +1,5 @@
 import 'package:final_exam_application/core/Exception/app_exception.dart';
+import 'package:final_exam_application/core/config/app_router_path.dart';
 import 'package:final_exam_application/features/auth/presentation/providers/auth_provider.dart';
 import 'package:final_exam_application/values/colors.dart';
 import 'package:final_exam_application/values/text_style.dart';
@@ -18,7 +19,8 @@ import 'about_page.dart';
 import 'feeds_page.dart';
 
 class ProfilePage extends ConsumerStatefulWidget {
-  ProfilePage({super.key});
+  ProfilePage({super.key, this.id});
+  int? id;
 
   @override
   ConsumerState createState() => _HomePageState();
@@ -48,10 +50,8 @@ class _HomePageState extends ConsumerState<ProfilePage> {
         statusCode: () => ref.read(profileProvider.notifier).statusCode,
         message: () => ref.read(profileProvider.notifier).message,
       );
-      Future.delayed(Duration(seconds: 2), () {
-        if (!mounted) return;
-        context.goNamed('login');
-      });
+      if (!mounted) return;
+      context.go(AppRouterPath.login);
     } catch (e) {
       debugPrint('Profile Page logout Error:${e.toString()}');
     }
@@ -154,7 +154,8 @@ class _HomePageState extends ConsumerState<ProfilePage> {
                       Expanded(
                         child: TextButton(
                           onPressed: () {
-                            ref.read(aboutTextBgColorProvider.notifier).state = Color(0XFFE50C54);
+                            ref.read(aboutTextBgColorProvider.notifier).state =
+                                AppColors.primaryColor;
                             ref.read(feedTextBgColorProvider.notifier).state = Colors.grey;
                             ref.read(tabBodyProvider.notifier).state = AboutPage();
                             ref.read(isProfileImageVisibleProvider.notifier).state = true;
@@ -190,9 +191,9 @@ class _HomePageState extends ConsumerState<ProfilePage> {
                   tabBody,
                 ],
               ),
-            ).wrapPaddingAll(10);
+            ).wrapPaddingAll(20);
           },
-          error: (error, stackTrace) => Text('No data found:$error'),
+          error: (error, stackTrace) => Center(child: Text('No data found')),
           loading: () => Center(child: CircularProgressIndicator(color: AppColors.primaryColor)),
         ),
       ),

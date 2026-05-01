@@ -368,6 +368,41 @@ class S {
       args: [],
     );
   }
+
+  /// `Sign up`
+  String get signup {
+    return Intl.message('Sign up', name: 'signup', desc: '', args: []);
+  }
+
+  /// `Portfolio picture`
+  String get portfolioPicture {
+    return Intl.message(
+      'Portfolio picture',
+      name: 'portfolioPicture',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No active internetConnection`
+  String get noActiveInternetconnection {
+    return Intl.message(
+      'No active internetConnection',
+      name: 'noActiveInternetconnection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please login again`
+  String get pleaseLoginAgain {
+    return Intl.message(
+      'Please login again',
+      name: 'pleaseLoginAgain',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

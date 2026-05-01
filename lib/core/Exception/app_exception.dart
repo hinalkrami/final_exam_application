@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:final_exam_application/features/auth/presentation/widgets/custom_widgets.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -35,13 +36,15 @@ class AppException implements Exception {
       await apiCall();
       if (!context.mounted) return;
       showNotification();
-    } on DioExceptionUntil catch (dioError) {
+    } on DioException catch (dioError) {
+      String? errorMessage = DioExceptionUntil.handleError(dioError);
       if (!context.mounted) return;
-      CustomWidgets.showSnackBar(dioError.toString(), context);
+      CustomWidgets.showSnackBar(errorMessage, context);
       debugPrint('DioError: $dioError');
     } on AppException catch (appError) {
+      String? errorMessage = AppException().toString();
       if (!context.mounted) return;
-      CustomWidgets.showSnackBar(appError.toString(), context);
+      CustomWidgets.showSnackBar(errorMessage, context);
       debugPrint('AppError: $appError');
     } catch (e) {
       if (!context.mounted) return;
@@ -66,4 +69,9 @@ class InvalidInputException extends AppException {
 
 class ServerSideException extends AppException {
   ServerSideException(String message) : super(message: message, prefix: S.current.serverSideError);
+}
+
+class NoInternetException extends AppException {
+  NoInternetException([String? message])
+    : super(message: message, prefix: S.current.noActiveInternetconnection);
 }

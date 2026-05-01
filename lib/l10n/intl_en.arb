@@ -43,5 +43,9 @@
   "feed": "Feed",
   "comments": "Comments",
   "comment": "Comment",
-  "noDataAvailable": "No data Available"
+  "noDataAvailable": "No data Available",
+  "signup": "Sign up",
+  "portfolioPicture": "Portfolio picture",
+  "noActiveInternetconnection": "No active internetConnection",
+  "pleaseLoginAgain": "Please login again"
 }

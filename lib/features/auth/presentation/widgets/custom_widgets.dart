@@ -1,6 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CustomWidgets {
   static Widget circularIndicator() {
@@ -13,5 +13,9 @@ class CustomWidgets {
 
   static void showSnackBar(String msg, BuildContext context) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));
+  }
+
+  static void internetConnectivityMsg() {
+    Fluttertoast.showToast(msg: 'Internet is not connected');
   }
 }

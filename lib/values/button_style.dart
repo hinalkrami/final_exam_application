@@ -14,6 +14,6 @@ class AppButtonStyle {
   static ButtonStyle textButtonStyle = TextButton.styleFrom(
     foregroundColor: Colors.black,
     fixedSize: Size(1.sw, 1.sh * 0.07),
-    textStyle: AppTextStyle.mediumText.copyWith(fontSize: 20.sp),
+    textStyle: AppTextStyle.mediumText.copyWith(fontSize: 18.spMin),
   );
 }

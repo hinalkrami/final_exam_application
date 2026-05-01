@@ -14,7 +14,6 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
-import '../../../../values/extensions/context_ext.dart';
 import '../../../../values/text_style.dart';
 
 class CommentsPage extends ConsumerStatefulWidget {
@@ -104,10 +103,9 @@ class _CommentsPageState extends ConsumerState<CommentsPage> {
               Expanded(
                 child: ListView.builder(
                   itemCount: comments.length,
-                  physics: BouncingScrollPhysics(),
                   itemBuilder: (context, index) => customListTile(
                     image: CachedNetworkImageProvider(comments[index].user!.profileImage!),
-                    name: comments[index].user!.fullName ?? 'No Name ',
+                    name: comments[index].user!.fullName ?? 'No Name',
                     timing: comments[index].commentTiming,
                     comment: comments[index].comment!,
                   ),
@@ -154,13 +152,8 @@ class _CommentsPageState extends ConsumerState<CommentsPage> {
           ),
           FloatingActionButton(
             onPressed: () {
-              addComments(
-                widget.id!,
-                AddCommentsModel(
-                  userId: commentData.value!.data!.comments![0].user!.id!,
-                  comment: commentController.text,
-                ),
-              );
+              addComments(widget.id!, AddCommentsModel(userId: 1, comment: commentController.text));
+              commentController.clear();
             },
             backgroundColor: AppColors.primaryColor,
             elevation: 0,

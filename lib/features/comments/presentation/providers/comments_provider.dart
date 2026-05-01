@@ -32,11 +32,10 @@ class CommentsProvider extends AsyncNotifier<UserResultModel<CommentsModel>> {
     return state.requireValue;
   }
 
-  Future<UserResultModel<CommentsModel>> addComments(int? id, AddCommentsModel? user) async {
+  Future<void> addComments(int? id, AddCommentsModel? user) async {
     state = AsyncValue.loading();
     state = await AsyncValue.guard(
       () async => await ref.read(commentsRepositoryProvider).addComments(id, user!),
     );
-    return state.requireValue;
   }
 }

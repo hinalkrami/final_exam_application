@@ -21,6 +21,10 @@ class CommentsRepositoriesImpl extends CommentsRepository {
   @override
   Future<UserResultModel<CommentsModel>> addComments(int? id, AddCommentsModel? user) async {
     final response = await _commentsApi.addComments(id, user!);
-    return UserResultModel(message: response.message, statusCode: response.statusCode);
+    return UserResultModel(
+      data: response.data,
+      message: response.message,
+      statusCode: response.statusCode,
+    );
   }
 }

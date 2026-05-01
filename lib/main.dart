@@ -17,27 +17,26 @@ void main() async {
   runApp(ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   MyApp({super.key});
 
-  final _router = AppRouter().router;
-
-  // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final router = ref.watch(routerProvider);
     return ScreenUtilInit(
       child: MaterialApp.router(
         debugShowCheckedModeBanner: false,
         localizationsDelegates: [S.delegate],
         theme: ThemeData(
           scaffoldBackgroundColor: Colors.white,
+
           textSelectionTheme: TextSelectionThemeData(
             selectionColor: AppColors.primaryColor.withAlpha(80),
             selectionHandleColor: AppColors.primaryColor,
             cursorColor: AppColors.primaryColor,
           ),
         ),
-        routerConfig: _router,
+        routerConfig: router,
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:final_exam_application/core/Exception/app_exception.dart';
+import 'package:final_exam_application/core/config/app_router_path.dart';
 import 'package:final_exam_application/features/auth/data/model/login_model.dart';
-import 'package:final_exam_application/features/auth/data/model/user_model.dart';
 import 'package:final_exam_application/features/auth/presentation/page/sign_up_page.dart';
 import 'package:final_exam_application/features/auth/presentation/providers/auth_provider.dart';
 import 'package:final_exam_application/features/auth/presentation/widgets/custom_background.dart';
@@ -59,7 +59,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
       ).then((value) {
         if (ref.read(authProvider.notifier).statusCode == 200) {
           if (!mounted) return;
-          context.go('/profile');
+          context.go(AppRouterPath.profile);
         } else {
           return;
         }
@@ -82,7 +82,7 @@ class _LoginPageState extends ConsumerState<LoginPage> {
           Positioned(
             top: 115.h,
             left: 130.w,
-            child: SvgPicture.asset(Assets.images.logo.path, height: 1.sh * 0.15),
+            child: SvgPicture.asset(Assets.images.logo.path, height: 1.sh * 0.13),
           ),
           Positioned(
             top: 260.h,
@@ -94,7 +94,10 @@ class _LoginPageState extends ConsumerState<LoginPage> {
                 mainAxisSize: .min,
                 spacing: 10.h,
                 children: [
-                  Text(S.of(context).login, style: AppTextStyle.boldText.copyWith(fontSize: 28.sp)),
+                  Text(
+                    S.of(context).login,
+                    style: AppTextStyle.mediumText.copyWith(fontSize: 28.sp),
+                  ),
                   CustomTextField(
                     hintText: S.of(context).phoneNumber,
                     keyboardType: .phone,

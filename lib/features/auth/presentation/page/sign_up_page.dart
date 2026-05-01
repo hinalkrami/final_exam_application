@@ -172,8 +172,8 @@ class _SingUpPageState extends ConsumerState<SignUpPage> {
                   child: Stack(
                     children: [
                       Container(
-                        height: 1.sh * 0.35,
-                        width: 1.sw * 0.35,
+                        height: 1.sh * 0.3,
+                        width: 1.sw * 0.3,
                         decoration: BoxDecoration(
                           shape: .circle,
                           border: Border.all(
@@ -186,15 +186,12 @@ class _SingUpPageState extends ConsumerState<SignUpPage> {
                                   fit: .cover,
                                   image: FileImage(File(selectedImage.path)),
                                 )
-                              : DecorationImage(
-                                  fit: .cover,
-                                  image: FileImage(File(Assets.images.profileImage.path)),
-                                ),
+                              : DecorationImage(image: AssetImage(Assets.images.profileImage.path)),
                         ),
                       ),
                       Positioned(
-                        top: 40.h,
-                        right: 35.h,
+                        top: 30.h,
+                        right: 50.h,
                         child: Container(
                           height: 1.sh * 0.13,
                           width: 1.sw * 0.12,
@@ -218,18 +215,17 @@ class _SingUpPageState extends ConsumerState<SignUpPage> {
                 ),
               ),
               Positioned(
-                top: 260.h,
+                top: 230.h,
                 width: 1.sw,
                 child: Form(
                   key: _formKey,
                   child: Column(
                     crossAxisAlignment: .start,
-                    mainAxisSize: .min,
                     spacing: 10.h,
                     children: [
                       Text(
-                        S.of(context).signUp,
-                        style: AppTextStyle.boldText.copyWith(fontSize: 28.sp),
+                        S.of(context).signup,
+                        style: AppTextStyle.mediumText.copyWith(fontSize: 28.spMin),
                       ),
                       CustomTextField(
                         hintText: S.of(context).fullName,
@@ -276,6 +272,10 @@ class _SingUpPageState extends ConsumerState<SignUpPage> {
                       ),
                       CheckboxListTile(
                         value: checkBoxValue,
+                        contentPadding: EdgeInsets.symmetric(horizontal: 0),
+                        dense: true,
+                        horizontalTitleGap: 0,
+
                         onChanged: (value) =>
                             ref.read(checkBoxValueProvider.notifier).state = value!,
                         controlAffinity: .leading,
@@ -325,7 +325,7 @@ class _SingUpPageState extends ConsumerState<SignUpPage> {
                       ),
                     ],
                   ),
-                ).wrapPaddingAll(10),
+                ).wrapPaddingAll(20),
               ),
             ],
           ),

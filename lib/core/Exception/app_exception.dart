@@ -43,6 +43,10 @@ class AppException implements Exception {
       if (!context.mounted) return;
       CustomWidgets.showSnackBar(appError.toString(), context);
       debugPrint('AppError: $appError');
+    } catch (e) {
+      if (!context.mounted) return;
+      CustomWidgets.showSnackBar('Something went wrong please try again later..', context);
+      debugPrint('Error: ${e.toString()}');
     }
   }
 }

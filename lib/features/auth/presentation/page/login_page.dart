@@ -57,8 +57,12 @@ class _LoginPageState extends ConsumerState<LoginPage> {
         statusCode: () => ref.read(authProvider.notifier).statusCode,
         message: () => ref.read(authProvider.notifier).message,
       ).then((value) {
-        if (!mounted) return;
-        context.go('/profile');
+        if (ref.read(authProvider.notifier).statusCode == 200) {
+          if (!mounted) return;
+          context.go('/profile');
+        } else {
+          return;
+        }
       });
     }
   }

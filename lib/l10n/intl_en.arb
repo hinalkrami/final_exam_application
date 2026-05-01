@@ -42,5 +42,6 @@
   "about": "About",
   "feed": "Feed",
   "comments": "Comments",
-  "comment": "Comment"
+  "comment": "Comment",
+  "noDataAvailable": "No data Available"
 }

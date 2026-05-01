@@ -7,5 +7,6 @@ class ApiEndpoints {
 
   static const String logout = '/social/logout';
 
-  static const String getComments = '/social/posts/';
+  static const String comments = '/social/posts/';
+
 }

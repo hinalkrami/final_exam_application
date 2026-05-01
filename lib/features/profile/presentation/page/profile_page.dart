@@ -1,30 +1,21 @@
 import 'package:final_exam_application/core/Exception/app_exception.dart';
-import 'package:final_exam_application/features/auth/data/model/login_model.dart';
 import 'package:final_exam_application/features/auth/presentation/providers/auth_provider.dart';
-import 'package:final_exam_application/features/auth/presentation/widgets/custom_button.dart';
-import 'package:final_exam_application/features/auth/presentation/widgets/custom_widgets.dart';
-import 'package:final_exam_application/features/profile/data/model/logout_model.dart';
-import 'package:final_exam_application/features/profile/data/model/profile_model.dart';
-import 'package:final_exam_application/features/profile/presentation/page/about_page.dart';
-import 'package:final_exam_application/features/profile/presentation/page/feeds_page.dart';
-import 'package:final_exam_application/features/profile/presentation/providers/profile_providers.dart';
 import 'package:final_exam_application/values/colors.dart';
-import 'package:final_exam_application/values/extensions/export.dart';
 import 'package:final_exam_application/values/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/legacy.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:go_router/go_router.dart';
+
 import '../../../../generated/assets.dart';
 import '../../../../generated/l10n.dart';
-import 'package:video_player/video_player.dart';
-
-import '../../../../values/button_style.dart';
-import '../../../auth/presentation/page/login_page.dart';
+import '../../../../values/extensions/widget_ext.dart';
+import '../../data/model/logout_model.dart';
+import '../providers/profile_providers.dart';
+import 'about_page.dart';
+import 'feeds_page.dart';
 
 class ProfilePage extends ConsumerStatefulWidget {
   ProfilePage({super.key});
@@ -45,7 +36,7 @@ class _HomePageState extends ConsumerState<ProfilePage> {
     // TODO: implement initState
     super.initState();
     Future.microtask(() {
-      getSingleUser(6);
+      getSingleUser(1);
     });
   }
 
@@ -97,7 +88,7 @@ class _HomePageState extends ConsumerState<ProfilePage> {
           TextButton.icon(
             onPressed: () => logout(LogoutModel(userId: profileData.value!.data!.user!.id)),
             label: Text(
-              'LogOut',
+              S.of(context).logout,
               style: AppTextStyle.mediumText.copyWith(color: AppColors.primaryColor),
             ),
           ),
@@ -205,14 +196,6 @@ class _HomePageState extends ConsumerState<ProfilePage> {
           loading: () => Center(child: CircularProgressIndicator(color: AppColors.primaryColor)),
         ),
       ),
-    );
-  }
-
-  Widget elevatedButton({Widget? buttonText, void Function()? onPressed}) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: AppButtonStyle.elevatedButtonStyle,
-      child: buttonText,
     );
   }
 }

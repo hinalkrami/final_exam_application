@@ -22,11 +22,11 @@ class FeedsPage extends ConsumerStatefulWidget {
 }
 
 class _FeedsPageState extends ConsumerState<FeedsPage> {
-  final videoPlayerProvider = FutureProvider.autoDispose.family<VideoPlayerController, String>((
+  final videoPlayerProvider = FutureProvider.autoDispose.family<VideoPlayerController, String?>((
     ref,
     url,
   ) async {
-    final controller = VideoPlayerController.networkUrl(Uri.parse(url));
+    final controller = VideoPlayerController.networkUrl(Uri.parse(url!));
     await controller.initialize();
     ref.onDispose(() {
       controller.dispose();
@@ -38,12 +38,11 @@ class _FeedsPageState extends ConsumerState<FeedsPage> {
     final profileData = ref.watch(profileProvider);
     return profileData.when(
       data: (data) {
-        final feeds = data.data!.feed![0];
-        final videoPlayController = ref.watch(videoPlayerProvider(feeds.videoUrl!));
+        final feeds = data.data!.feed;
         if (data.data == null) {
           return Center(child: Text(S.of(context).dataNotFound));
         }
-        Widget feedsHeader() {
+        Widget feedsHeader(int index) {
           return ListTile(
             leading: Container(
               height: 1.sh * 0.6,
@@ -58,16 +57,16 @@ class _FeedsPageState extends ConsumerState<FeedsPage> {
                 ),
                 image: DecorationImage(
                   fit: .cover,
-                  image: AssetImage(Assets.images.profileImage.path),
+                  image: CachedNetworkImageProvider(feeds![index].user!.profileImage!),
                 ),
               ),
             ),
             title: Text(
-              feeds.user!.fullName!,
+              feeds[index].user!.fullName!,
               style: AppTextStyle.mediumText.copyWith(fontSize: 17.sp),
             ),
             subtitle: Text(
-              feeds.postTiming!,
+              feeds[index].postTiming!,
               style: AppTextStyle.regularText.copyWith(color: Colors.grey, fontSize: 14.sp),
             ),
             trailing: PopupMenuButton(
@@ -117,102 +116,105 @@ class _FeedsPageState extends ConsumerState<FeedsPage> {
           );
         }
 
-        Widget feedsBodyText() {
-          return Text(data.data!.feed![0].caption!, style: AppTextStyle.regularText);
-        }
-
-        Widget feedsMedia() {
-          return videoPlayController.when(
-            data: (data) {
-              data.play();
-              return AspectRatio(
-                aspectRatio: data.value.aspectRatio,
-                child: Container(
-                  clipBehavior: .antiAlias,
-                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
-                  child: InkWell(
-                    onTap: () => data.value.isPlaying ? data.pause() : data.play(),
-                    child: Stack(
-                      alignment: .center,
-                      children: [
-                        VideoPlayer(data),
-                        Visibility(
-                          visible: !data.value.isPlaying,
-                          child: SvgPicture.asset(Assets.icons.playIcon.path),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              );
-            },
-            error: (error, stackTrace) => Text(S.of(context).dataNotFound),
-            loading: () => Center(child: CircularProgressIndicator(color: AppColors.primaryColor)),
+        Widget feedsBodyText(int index) {
+          return Text(
+            feeds![index].caption ?? 'No Caption Available',
+            style: AppTextStyle.regularText,
           );
         }
 
-        Widget feedsLikeComments() {
+        Widget feedsMedia(int index) {
+          Widget feedVideo(int index) {
+            final videoPlayController = ref.watch(videoPlayerProvider(feeds![index].videoUrl!));
+            return videoPlayController.when(
+              data: (data) {
+                data.play();
+                return AspectRatio(
+                  aspectRatio: data.value.aspectRatio,
+                  child: Container(
+                    clipBehavior: .antiAlias,
+                    decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                    child: InkWell(
+                      onTap: () => data.value.isPlaying ? data.pause() : data.play(),
+                      child: Stack(
+                        alignment: .center,
+                        children: [
+                          VideoPlayer(data),
+                          Visibility(
+                            visible: !data.value.isPlaying,
+                            child: SvgPicture.asset(Assets.icons.playIcon.path),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                );
+              },
+              error: (error, stackTrace) => Text(S.of(context).dataNotFound),
+              loading: () =>
+                  Center(child: CircularProgressIndicator(color: AppColors.primaryColor)),
+            );
+          }
+
+          return feeds![index].imageUrl != null
+              ? Container(
+                  clipBehavior: .antiAlias,
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+                  child: CachedNetworkImage(imageUrl: feeds[index].imageUrl!),
+                )
+              : feeds[index].videoUrl != null
+              ? feedVideo(index)
+              : Container();
+        }
+
+        Widget feedsLikeComments(int index) {
           return Row(
             spacing: 5.w,
             children: [
               SvgPicture.asset(Assets.icons.likeIcon.path),
               Text(
-                feeds.likesCount!.toString(),
+                feeds![index].likesCount!.toString(),
                 style: AppTextStyle.regularText.copyWith(color: Colors.grey, fontSize: 14.sp),
               ),
               InkWell(
-                onTap: () => context.push('/comments/${feeds.id.toString()}'),
+                onTap: () => context.push('/comments/${feeds[index].id.toString()}'),
                 child: SvgPicture.asset(Assets.icons.chatIcon.path),
               ),
               Text(
-                feeds.commentsCount!.toString(),
+                feeds[index].commentsCount!.toString(),
                 style: AppTextStyle.regularText.copyWith(color: Colors.grey, fontSize: 14.sp),
               ),
             ],
           );
         }
 
-        return Column(
-          spacing: 20.h,
-          children: [
-            _feedContainer(children: [feedsHeader(), feedsBodyText(), feedsLikeComments()]),
-            _feedContainer(
-              children: [feedsHeader(), feedsMedia(), feedsLikeComments(), feedsBodyText()],
+        Widget feedContainer(int index) {
+          return Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.r),
+              border: Border.all(color: AppColors.circleBoarderColor),
             ),
-            _feedContainer(
+            child: Column(
+              spacing: 10.h,
+              crossAxisAlignment: .start,
               children: [
-                feedsHeader(),
-                Container(
-                  height: 1.sh * 0.3,
-                  width: 1.sw,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: CachedNetworkImageProvider(feeds.thumbnailUrl!),
-                      fit: .fill,
-                    ),
-                  ),
-                ),
-                feedsLikeComments(),
-                feedsBodyText(),
+                feedsHeader(index),
+                feedsMedia(index),
+                feedsBodyText(index),
+                feedsLikeComments(index),
               ],
             ),
-          ],
+          );
+        }
+
+        return Column(
+          spacing: 20.h,
+          children: List<Widget>.generate(feeds!.length, (index) => feedContainer(index)),
         );
       },
       error: (error, stackTrace) => Text(S.of(context).dataNotFound),
       loading: () => Center(child: CircularProgressIndicator(color: AppColors.primaryColor)),
-    );
-  }
-
-  Widget _feedContainer({List<Widget>? children}) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20.r),
-        border: Border.all(color: AppColors.circleBoarderColor),
-      ),
-      child: Column(spacing: 10.h, crossAxisAlignment: .start, children: children!),
     );
   }
 }

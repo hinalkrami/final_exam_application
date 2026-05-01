@@ -358,6 +358,16 @@ class S {
   String get comment {
     return Intl.message('Comment', name: 'comment', desc: '', args: []);
   }
+
+  /// `No data Available`
+  String get noDataAvailable {
+    return Intl.message(
+      'No data Available',
+      name: 'noDataAvailable',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

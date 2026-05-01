@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:final_exam_application/features/auth/presentation/page/login_page.dart';
 import 'package:final_exam_application/values/extensions/context_ext.dart';
 import 'package:flutter/material.dart';
@@ -50,7 +51,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                         overflow: .ellipsis,
                       ),
                       Text(
-                        user.age!.toString(),
+                        user.age.toString(),
                         overflow: .ellipsis,
                         style: AppTextStyle.regularText.copyWith(fontSize: 20.sp),
                       ),
@@ -93,13 +94,10 @@ class _AboutPageState extends ConsumerState<AboutPage> {
           return Wrap(
             spacing: 10,
             runSpacing: 10,
-            children: [
-              _interestContainers(S.of(context).gaming),
-              _interestContainers(S.of(context).dancing),
-              _interestContainers(S.of(context).music),
-              _interestContainers(S.of(context).movie),
-              _interestContainers(S.of(context).book),
-            ],
+            children: List<Widget>.generate(
+              user!.interests!.length,
+              (index) => _interestContainers(user.interests![index]),
+            ),
           );
         }
 
@@ -112,27 +110,32 @@ class _AboutPageState extends ConsumerState<AboutPage> {
               StaggeredGridTile.count(
                 crossAxisCellCount: 2,
                 mainAxisCellCount: 3,
-                child: _profileImageContainer(Assets.images.profileImage1.path),
+                child: _profileImageContainer(data.data!.posts![0].imageUrl!),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 2,
                 mainAxisCellCount: 3,
-                child: _profileImageContainer(Assets.images.profileImage2.path),
-              ),
-              StaggeredGridTile.count(
-                crossAxisCellCount: 2,
-                mainAxisCellCount: 1.5,
-                child: _profileImageContainer(Assets.images.profileImage3.path),
+                child: _profileImageContainer(data.data!.posts![1].imageUrl!),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1.5,
-                child: _profileImageContainer(Assets.images.profileImage4.path),
+                child: _profileImageContainer(data.data!.posts![2].imageUrl!),
               ),
               StaggeredGridTile.count(
                 crossAxisCellCount: 1,
                 mainAxisCellCount: 1.5,
-                child: _profileImageContainer(Assets.images.profileImage5.path),
+                child: _profileImageContainer(data.data!.posts![3].imageUrl!),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1.5,
+                child: _profileImageContainer(data.data!.posts![4].imageUrl!),
+              ),
+              StaggeredGridTile.count(
+                crossAxisCellCount: 1,
+                mainAxisCellCount: 1.5,
+                child: _profileImageContainer(data.data!.posts![4].imageUrl!),
               ),
             ],
           );
@@ -157,10 +160,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
             20.verticalSpace,
             Text(S.of(context).aboutMe, style: headingTextStyle),
             10.verticalSpace,
-            Text(
-              'I really like dancing. Dancing is a part of my life. Do you want to dance with me? I will teach you to dance, you will not regret doing it. See You tomorrow !',
-              style: AppTextStyle.regularText.copyWith(color: Colors.grey),
-            ),
+            Text(user!.bio!, style: AppTextStyle.regularText.copyWith(color: Colors.grey)),
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
@@ -177,8 +177,6 @@ class _AboutPageState extends ConsumerState<AboutPage> {
                 ),
               ],
             ),
-            10.verticalSpace,
-            profileImage(),
             10.verticalSpace,
             profileImage(),
           ],
@@ -204,7 +202,7 @@ class _AboutPageState extends ConsumerState<AboutPage> {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        image: DecorationImage(image: AssetImage(imagePath), fit: .fill),
+        image: DecorationImage(image: CachedNetworkImageProvider(imagePath), fit: .fill),
       ),
     );
   }

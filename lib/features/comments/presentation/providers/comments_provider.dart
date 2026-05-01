@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:final_exam_application/core/locators/locators.dart';
 import 'package:final_exam_application/features/auth/data/model/user_result_model.dart';
 import 'package:final_exam_application/features/comments/data/datasource/comments_api.dart';
+import 'package:final_exam_application/features/comments/data/model/add_comments_model.dart';
 import 'package:final_exam_application/features/comments/data/model/comments_model.dart';
 import 'package:final_exam_application/features/comments/data/repository_impl/comments_repositories_impl.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -27,6 +28,14 @@ class CommentsProvider extends AsyncNotifier<UserResultModel<CommentsModel>> {
     state = AsyncValue.loading();
     state = await AsyncValue.guard(
       () async => await ref.read(commentsRepositoryProvider).getComments(id),
+    );
+    return state.requireValue;
+  }
+
+  Future<UserResultModel<CommentsModel>> addComments(int? id, AddCommentsModel? user) async {
+    state = AsyncValue.loading();
+    state = await AsyncValue.guard(
+      () async => await ref.read(commentsRepositoryProvider).addComments(id, user!),
     );
     return state.requireValue;
   }

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-/// comments : [{"id":176,"comment":"Incredible shot!","comment_timing":"2 days ago","user":{"id":1,"profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":177,"comment":"Can't stop looking at this 👀","comment_timing":"2 days ago","user":{"id":2,"profile_image":"https://i.pravatar.cc/150?img=12"}},{"id":178,"comment":"So beautiful! 🌟","comment_timing":"2 days ago","user":{"id":3,"profile_image":"https://i.pravatar.cc/150?img=32"}},{"id":179,"comment":"This is everything! 💯","comment_timing":"2 days ago","user":{"id":4,"profile_image":"https://i.pravatar.cc/150?img=15"}},{"id":137,"comment":"Incredible shot!","comment_timing":"2 days ago","user":{"id":1,"profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":138,"comment":"Can't stop looking at this 👀","comment_timing":"2 days ago","user":{"id":2,"profile_image":"https://i.pravatar.cc/150?img=12"}},{"id":139,"comment":"So beautiful! 🌟","comment_timing":"2 days ago","user":{"id":3,"profile_image":"https://i.pravatar.cc/150?img=32"}},{"id":93,"comment":"Incredible shot!","comment_timing":"2 days ago","user":{"id":1,"profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":94,"comment":"Can't stop looking at this 👀","comment_timing":"2 days ago","user":{"id":2,"profile_image":"https://i.pravatar.cc/150?img=12"}},{"id":95,"comment":"So beautiful! 🌟","comment_timing":"2 days ago","user":{"id":3,"profile_image":"https://i.pravatar.cc/150?img=32"}},{"id":96,"comment":"This is everything! 💯","comment_timing":"2 days ago","user":{"id":4,"profile_image":"https://i.pravatar.cc/150?img=15"}},{"id":97,"comment":"Wow, amazing! 🔥","comment_timing":"2 days ago","user":{"id":5,"profile_image":"https://i.pravatar.cc/150?img=44"}},{"id":59,"comment":"Incredible shot!","comment_timing":"2 days ago","user":{"id":1,"profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":60,"comment":"Can't stop looking at this 👀","comment_timing":"2 days ago","user":{"id":2,"profile_image":"https://i.pravatar.cc/150?img=12"}},{"id":61,"comment":"So beautiful! 🌟","comment_timing":"2 days ago","user":{"id":3,"profile_image":"https://i.pravatar.cc/150?img=32"}},{"id":62,"comment":"This is everything! 💯","comment_timing":"2 days ago","user":{"id":4,"profile_image":"https://i.pravatar.cc/150?img=15"}},{"id":23,"comment":"Incredible shot!","comment_timing":"2 days ago","user":{"id":1,"profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":24,"comment":"Can't stop looking at this 👀","comment_timing":"2 days ago","user":{"id":2,"profile_image":"https://i.pravatar.cc/150?img=12"}},{"id":25,"comment":"So beautiful! 🌟","comment_timing":"2 days ago","user":{"id":3,"profile_image":"https://i.pravatar.cc/150?img=32"}},{"id":26,"comment":"This is everything! 💯","comment_timing":"2 days ago","user":{"id":4,"profile_image":"https://i.pravatar.cc/150?img=15"}},{"id":27,"comment":"Wow, amazing! 🔥","comment_timing":"2 days ago","user":{"id":5,"profile_image":"https://i.pravatar.cc/150?img=44"}}]
+/// comments : [{"id":157,"comment":"Love this so much! ❤️","comment_timing":"3 days ago","user":{"id":1,"profile_image":"https://i.pravatar.cc/150?img=47","full_name":"Jenny Wilson"}},{"id":158,"comment":"Goals! 🙌","comment_timing":"3 days ago","user":{"id":2,"profile_image":"https://i.pravatar.cc/150?img=12","full_name":"Alex Carter"}},{"id":159,"comment":"Where is this? I need to go!","comment_timing":"3 days ago","user":{"id":3,"profile_image":"https://i.pravatar.cc/150?img=32","full_name":"Sofia Reyes"}},{"id":160,"comment":"You always take the best photos!","comment_timing":"3 days ago","user":{"id":4,"profile_image":"https://i.pravatar.cc/150?img=15","full_name":"Marcus Lee"}},{"id":161,"comment":"This made my day 😊","comment_timing":"3 days ago","user":{"id":5,"profile_image":"https://i.pravatar.cc/150?img=44","full_name":"Priya Sharma"}},{"id":114,"comment":"Love this so much! ❤️","comment_timing":"3 days ago","user":{"id":1,"profile_image":"https://i.pravatar.cc/150?img=47","full_name":"Jenny Wilson"}},{"id":115,"comment":"Goals! 🙌","comment_timing":"3 days ago","user":{"id":2,"profile_image":"https://i.pravatar.cc/150?img=12","full_name":"Alex Carter"}},{"id":116,"comment":"Where is this? I need to go!","comment_timing":"3 days ago","user":{"id":3,"profile_image":"https://i.pravatar.cc/150?img=32","full_name":"Sofia Reyes"}},{"id":117,"comment":"You always take the best photos!","comment_timing":"3 days ago","user":{"id":4,"profile_image":"https://i.pravatar.cc/150?img=15","full_name":"Marcus Lee"}},{"id":118,"comment":"This made my day 😊","comment_timing":"3 days ago","user":{"id":5,"profile_image":"https://i.pravatar.cc/150?img=44","full_name":"Priya Sharma"}},{"id":77,"comment":"Love this so much! ❤️","comment_timing":"3 days ago","user":{"id":1,"profile_image":"https://i.pravatar.cc/150?img=47","full_name":"Jenny Wilson"}},{"id":78,"comment":"Goals! 🙌","comment_timing":"3 days ago","user":{"id":2,"profile_image":"https://i.pravatar.cc/150?img=12","full_name":"Alex Carter"}},{"id":79,"comment":"Where is this? I need to go!","comment_timing":"3 days ago","user":{"id":3,"profile_image":"https://i.pravatar.cc/150?img=32","full_name":"Sofia Reyes"}},{"id":42,"comment":"Love this so much! ❤️","comment_timing":"3 days ago","user":{"id":1,"profile_image":"https://i.pravatar.cc/150?img=47","full_name":"Jenny Wilson"}},{"id":43,"comment":"Goals! 🙌","comment_timing":"3 days ago","user":{"id":2,"profile_image":"https://i.pravatar.cc/150?img=12","full_name":"Alex Carter"}},{"id":44,"comment":"Where is this? I need to go!","comment_timing":"3 days ago","user":{"id":3,"profile_image":"https://i.pravatar.cc/150?img=32","full_name":"Sofia Reyes"}},{"id":45,"comment":"You always take the best photos!","comment_timing":"3 days ago","user":{"id":4,"profile_image":"https://i.pravatar.cc/150?img=15","full_name":"Marcus Lee"}},{"id":1,"comment":"Love this so much! ❤️","comment_timing":"3 days ago","user":{"id":1,"profile_image":"https://i.pravatar.cc/150?img=47","full_name":"Jenny Wilson"}},{"id":2,"comment":"Goals! 🙌","comment_timing":"3 days ago","user":{"id":2,"profile_image":"https://i.pravatar.cc/150?img=12","full_name":"Alex Carter"}},{"id":3,"comment":"Where is this? I need to go!","comment_timing":"3 days ago","user":{"id":3,"profile_image":"https://i.pravatar.cc/150?img=32","full_name":"Sofia Reyes"}}]
 
 CommentsModel commentsModelFromJson(String str) => CommentsModel.fromJson(json.decode(str));
 String commentsModelToJson(CommentsModel data) => json.encode(data.toJson());
@@ -32,10 +32,10 @@ class CommentsModel {
   }
 }
 
-/// id : 176
-/// comment : "Incredible shot!"
-/// comment_timing : "2 days ago"
-/// user : {"id":1,"profile_image":"https://i.pravatar.cc/150?img=47"}
+/// id : 157
+/// comment : "Love this so much! ❤️"
+/// comment_timing : "3 days ago"
+/// user : {"id":1,"profile_image":"https://i.pravatar.cc/150?img=47","full_name":"Jenny Wilson"}
 
 Comments commentsFromJson(String str) => Comments.fromJson(json.decode(str));
 String commentsToJson(Comments data) => json.encode(data.toJson());
@@ -83,31 +83,40 @@ class Comments {
 
 /// id : 1
 /// profile_image : "https://i.pravatar.cc/150?img=47"
+/// full_name : "Jenny Wilson"
 
 User userFromJson(String str) => User.fromJson(json.decode(str));
 String userToJson(User data) => json.encode(data.toJson());
 
 class User {
-  User({num? id, String? profileImage}) {
+  User({num? id, String? profileImage, String? fullName}) {
     _id = id;
     _profileImage = profileImage;
+    _fullName = fullName;
   }
 
   User.fromJson(dynamic json) {
     _id = json['id'];
     _profileImage = json['profile_image'];
+    _fullName = json['full_name'];
   }
   num? _id;
   String? _profileImage;
-  User copyWith({num? id, String? profileImage}) =>
-      User(id: id ?? _id, profileImage: profileImage ?? _profileImage);
+  String? _fullName;
+  User copyWith({num? id, String? profileImage, String? fullName}) => User(
+    id: id ?? _id,
+    profileImage: profileImage ?? _profileImage,
+    fullName: fullName ?? _fullName,
+  );
   num? get id => _id;
   String? get profileImage => _profileImage;
+  String? get fullName => _fullName;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
     map['id'] = _id;
     map['profile_image'] = _profileImage;
+    map['full_name'] = _fullName;
     return map;
   }
 }

@@ -1,20 +1,20 @@
 import 'dart:convert';
 
-/// user : {"id":6,"full_name":"Jenny Wilson","username":"jenny_wilson12","mobile":"+971501234567","email":"jenny@example.com","dob":"1998-05-21","gender":"Female","bio":null,"profile_image":null,"interests":[],"age":27}
-/// posts : [{"id":6,"post_type":"video","image_url":null,"video_url":"https://www.w3schools.com/html/movie.mp4","thumbnail_url":"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600"}]
-/// feed : [{"id":6,"post_type":"video","image_url":null,"video_url":"https://www.w3schools.com/html/movie.mp4","thumbnail_url":"https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600","caption":"Sunset timelapse from the rooftop 🌇","text_content":null,"likes_count":744,"comments_count":63,"post_timing":"2 days ago","user":{"id":6,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":null}}]
+/// user : {"id":1,"full_name":"Jenny Wilson","username":"jenny_wilson12","mobile":"+971501110001","email":"jenny@example.com","dob":"1998-05-21","gender":"Female","bio":"Living life one photo at a time 📸 | Travel lover | Coffee addict","profile_image":"https://i.pravatar.cc/150?img=47","interests":["Travel","Photography","Coffee","Music"],"age":27}
+/// posts : [{"id":11,"post_type":"image","image_url":"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600","video_url":null,"thumbnail_url":null},{"id":12,"post_type":"image","image_url":"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600","video_url":null,"thumbnail_url":null},{"id":13,"post_type":"image","image_url":"https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600","video_url":null,"thumbnail_url":null},{"id":14,"post_type":"image","image_url":"https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600","video_url":null,"thumbnail_url":null},{"id":15,"post_type":"image","image_url":"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600","video_url":null,"thumbnail_url":null},{"id":16,"post_type":"video","image_url":null,"video_url":"https://www.w3schools.com/html/mov_bbb.mp4","thumbnail_url":"https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600"},{"id":17,"post_type":"text","image_url":null,"video_url":null,"thumbnail_url":null},{"id":18,"post_type":"text","image_url":null,"video_url":null,"thumbnail_url":null},{"id":1,"post_type":"image","image_url":"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600","video_url":null,"thumbnail_url":null}]
+/// feed : [{"id":11,"post_type":"image","image_url":"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600","video_url":null,"thumbnail_url":null,"caption":"Golden hour in Santorini 🌅 Nothing beats this view!","text_content":null,"likes_count":342,"comments_count":28,"post_timing":"3 days ago","user":{"id":1,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":12,"post_type":"image","image_url":"https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=600","video_url":null,"thumbnail_url":null,"caption":"Morning coffee ritual ☕ Starting the day right","text_content":null,"likes_count":189,"comments_count":14,"post_timing":"3 days ago","user":{"id":1,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":13,"post_type":"image","image_url":"https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=600","video_url":null,"thumbnail_url":null,"caption":"Exploring hidden streets of Rome 🇮🇹","text_content":null,"likes_count":521,"comments_count":47,"post_timing":"3 days ago","user":{"id":1,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":14,"post_type":"image","image_url":"https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600","video_url":null,"thumbnail_url":null,"caption":"Bali sunsets hit different 🌴","text_content":null,"likes_count":610,"comments_count":52,"post_timing":"3 days ago","user":{"id":1,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":15,"post_type":"image","image_url":"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600","video_url":null,"thumbnail_url":null,"caption":"Paris in the rain is still magical 🗼","text_content":null,"likes_count":480,"comments_count":39,"post_timing":"3 days ago","user":{"id":1,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":16,"post_type":"video","image_url":null,"video_url":"https://www.w3schools.com/html/mov_bbb.mp4","thumbnail_url":"https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600","caption":"Travel vlog: 48 hours in Tokyo 🇯🇵✈️","text_content":null,"likes_count":892,"comments_count":74,"post_timing":"3 days ago","user":{"id":1,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":17,"post_type":"text","image_url":null,"video_url":null,"thumbnail_url":null,"caption":null,"text_content":"Traveling solo taught me more about myself than any relationship ever did. The world is your classroom. 🌍✨","likes_count":445,"comments_count":38,"post_timing":"3 days ago","user":{"id":1,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":18,"post_type":"text","image_url":null,"video_url":null,"thumbnail_url":null,"caption":null,"text_content":"PSA: You don't need a travel buddy to explore the world. Pack your bags and go. The best stories are the ones you write alone. 🎒","likes_count":312,"comments_count":27,"post_timing":"3 days ago","user":{"id":1,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":"https://i.pravatar.cc/150?img=47"}},{"id":1,"post_type":"image","image_url":"https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600","video_url":null,"thumbnail_url":null,"caption":"Golden hour in Santorini 🌅 Nothing beats this view!","text_content":null,"likes_count":342,"comments_count":28,"post_timing":"3 days ago","user":{"id":1,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":"https://i.pravatar.cc/150?img=47"}}]
 
 ProfileModel profileModelFromJson(String str) => ProfileModel.fromJson(json.decode(str));
 String profileModelToJson(ProfileModel data) => json.encode(data.toJson());
 
 class ProfileModel {
-  ProfileModel({ProfileUser? profileUser, List<Posts>? posts, List<Feed>? feed}) {
-    _user = profileUser;
+  ProfileModel({ProfileUser? user, List<Posts>? posts, List<Feed>? feed}) {
+    _user = user;
     _posts = posts;
     _feed = feed;
   }
 
-  ProfileModel.fromJson(Map<String, dynamic> json) {
+  ProfileModel.fromJson(dynamic json) {
     _user = json['user'] != null ? ProfileUser.fromJson(json['user']) : null;
     if (json['posts'] != null) {
       _posts = [];
@@ -33,7 +33,7 @@ class ProfileModel {
   List<Posts>? _posts;
   List<Feed>? _feed;
   ProfileModel copyWith({ProfileUser? user, List<Posts>? posts, List<Feed>? feed}) =>
-      ProfileModel(profileUser: user ?? _user, posts: posts ?? _posts, feed: feed ?? _feed);
+      ProfileModel(user: user ?? _user, posts: posts ?? _posts, feed: feed ?? _feed);
   ProfileUser? get user => _user;
   List<Posts>? get posts => _posts;
   List<Feed>? get feed => _feed;
@@ -53,17 +53,17 @@ class ProfileModel {
   }
 }
 
-/// id : 6
-/// post_type : "video"
-/// image_url : null
-/// video_url : "https://www.w3schools.com/html/movie.mp4"
-/// thumbnail_url : "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600"
-/// caption : "Sunset timelapse from the rooftop 🌇"
+/// id : 11
+/// post_type : "image"
+/// image_url : "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600"
+/// video_url : null
+/// thumbnail_url : null
+/// caption : "Golden hour in Santorini 🌅 Nothing beats this view!"
 /// text_content : null
-/// likes_count : 744
-/// comments_count : 63
-/// post_timing : "2 days ago"
-/// user : {"id":6,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":null}
+/// likes_count : 342
+/// comments_count : 28
+/// post_timing : "3 days ago"
+/// user : {"id":1,"full_name":"Jenny Wilson","username":"jenny_wilson12","profile_image":"https://i.pravatar.cc/150?img=47"}
 
 Feed feedFromJson(String str) => Feed.fromJson(json.decode(str));
 String feedToJson(Feed data) => json.encode(data.toJson());
@@ -72,9 +72,9 @@ class Feed {
   Feed({
     num? id,
     String? postType,
-    dynamic imageUrl,
+    String? imageUrl,
     String? videoUrl,
-    String? thumbnailUrl,
+    dynamic thumbnailUrl,
     String? caption,
     dynamic textContent,
     num? likesCount,
@@ -99,7 +99,7 @@ class Feed {
     _id = json['id'];
     _postType = json['post_type'];
     _imageUrl = json['image_url'];
-    _videoUrl = json['video_url'];
+    _videoUrl = json['video_url'] as String?;
     _thumbnailUrl = json['thumbnail_url'];
     _caption = json['caption'];
     _textContent = json['text_content'];
@@ -110,9 +110,9 @@ class Feed {
   }
   num? _id;
   String? _postType;
-  dynamic _imageUrl;
+  String? _imageUrl;
   String? _videoUrl;
-  String? _thumbnailUrl;
+  dynamic _thumbnailUrl;
   String? _caption;
   dynamic _textContent;
   num? _likesCount;
@@ -122,9 +122,9 @@ class Feed {
   Feed copyWith({
     num? id,
     String? postType,
-    dynamic imageUrl,
+    String? imageUrl,
     String? videoUrl,
-    String? thumbnailUrl,
+    dynamic thumbnailUrl,
     String? caption,
     dynamic textContent,
     num? likesCount,
@@ -146,9 +146,9 @@ class Feed {
   );
   num? get id => _id;
   String? get postType => _postType;
-  dynamic get imageUrl => _imageUrl;
+  String? get imageUrl => _imageUrl;
   String? get videoUrl => _videoUrl;
-  String? get thumbnailUrl => _thumbnailUrl;
+  dynamic get thumbnailUrl => _thumbnailUrl;
   String? get caption => _caption;
   dynamic get textContent => _textContent;
   num? get likesCount => _likesCount;
@@ -175,16 +175,16 @@ class Feed {
   }
 }
 
-/// id : 6
+/// id : 1
 /// full_name : "Jenny Wilson"
 /// username : "jenny_wilson12"
-/// profile_image : null
+/// profile_image : "https://i.pravatar.cc/150?img=47"
 
 User userFromJson(String str) => User.fromJson(json.decode(str));
 String userToJson(User data) => json.encode(data.toJson());
 
 class User {
-  User({num? id, String? fullName, String? username, dynamic profileImage}) {
+  User({num? id, String? fullName, String? username, String? profileImage}) {
     _id = id;
     _fullName = fullName;
     _username = username;
@@ -200,8 +200,8 @@ class User {
   num? _id;
   String? _fullName;
   String? _username;
-  dynamic _profileImage;
-  User copyWith({num? id, String? fullName, String? username, dynamic profileImage}) => User(
+  String? _profileImage;
+  User copyWith({num? id, String? fullName, String? username, String? profileImage}) => User(
     id: id ?? _id,
     fullName: fullName ?? _fullName,
     username: username ?? _username,
@@ -210,7 +210,7 @@ class User {
   num? get id => _id;
   String? get fullName => _fullName;
   String? get username => _username;
-  dynamic get profileImage => _profileImage;
+  String? get profileImage => _profileImage;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -222,17 +222,17 @@ class User {
   }
 }
 
-/// id : 6
-/// post_type : "video"
-/// image_url : null
-/// video_url : "https://www.w3schools.com/html/movie.mp4"
-/// thumbnail_url : "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600"
+/// id : 11
+/// post_type : "image"
+/// image_url : "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600"
+/// video_url : null
+/// thumbnail_url : null
 
 Posts postsFromJson(String str) => Posts.fromJson(json.decode(str));
 String postsToJson(Posts data) => json.encode(data.toJson());
 
 class Posts {
-  Posts({num? id, String? postType, dynamic imageUrl, String? videoUrl, String? thumbnailUrl}) {
+  Posts({num? id, String? postType, String? imageUrl, dynamic videoUrl, dynamic thumbnailUrl}) {
     _id = id;
     _postType = postType;
     _imageUrl = imageUrl;
@@ -249,15 +249,15 @@ class Posts {
   }
   num? _id;
   String? _postType;
-  dynamic _imageUrl;
-  String? _videoUrl;
-  String? _thumbnailUrl;
+  String? _imageUrl;
+  dynamic _videoUrl;
+  dynamic _thumbnailUrl;
   Posts copyWith({
     num? id,
     String? postType,
-    dynamic imageUrl,
-    String? videoUrl,
-    String? thumbnailUrl,
+    String? imageUrl,
+    dynamic videoUrl,
+    dynamic thumbnailUrl,
   }) => Posts(
     id: id ?? _id,
     postType: postType ?? _postType,
@@ -267,9 +267,9 @@ class Posts {
   );
   num? get id => _id;
   String? get postType => _postType;
-  dynamic get imageUrl => _imageUrl;
-  String? get videoUrl => _videoUrl;
-  String? get thumbnailUrl => _thumbnailUrl;
+  String? get imageUrl => _imageUrl;
+  dynamic get videoUrl => _videoUrl;
+  dynamic get thumbnailUrl => _thumbnailUrl;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -282,20 +282,20 @@ class Posts {
   }
 }
 
-/// id : 6
+/// id : 1
 /// full_name : "Jenny Wilson"
 /// username : "jenny_wilson12"
-/// mobile : "+971501234567"
+/// mobile : "+971501110001"
 /// email : "jenny@example.com"
 /// dob : "1998-05-21"
 /// gender : "Female"
-/// bio : null
-/// profile_image : null
-/// interests : []
+/// bio : "Living life one photo at a time 📸 | Travel lover | Coffee addict"
+/// profile_image : "https://i.pravatar.cc/150?img=47"
+/// interests : ["Travel","Photography","Coffee","Music"]
 /// age : 27
 
-User profileUserFromJson(String str) => User.fromJson(json.decode(str));
-String profileUserToJson(User data) => json.encode(data.toJson());
+ProfileUser profileUserFromJson(String str) => ProfileUser.fromJson(json.decode(str));
+String profileUserToJson(ProfileUser data) => json.encode(data.toJson());
 
 class ProfileUser {
   ProfileUser({
@@ -306,9 +306,9 @@ class ProfileUser {
     String? email,
     String? dob,
     String? gender,
-    dynamic bio,
-    dynamic profileImage,
-    List<dynamic>? interests,
+    String? bio,
+    String? profileImage,
+    List<String>? interests,
     num? age,
   }) {
     _id = id;
@@ -334,12 +334,7 @@ class ProfileUser {
     _gender = json['gender'];
     _bio = json['bio'];
     _profileImage = json['profile_image'];
-    if (json['interests'] != null) {
-      _interests = [];
-      json['interests'].forEach((v) {
-        _interests?.add(ProfileUser.fromJson(v));
-      });
-    }
+    _interests = json['interests'] != null ? json['interests'].cast<String>() : [];
     _age = json['age'];
   }
   num? _id;
@@ -349,9 +344,9 @@ class ProfileUser {
   String? _email;
   String? _dob;
   String? _gender;
-  dynamic _bio;
-  dynamic _profileImage;
-  List<dynamic>? _interests;
+  String? _bio;
+  String? _profileImage;
+  List<String>? _interests;
   num? _age;
   ProfileUser copyWith({
     num? id,
@@ -361,9 +356,9 @@ class ProfileUser {
     String? email,
     String? dob,
     String? gender,
-    dynamic bio,
-    dynamic profileImage,
-    List<dynamic>? interests,
+    String? bio,
+    String? profileImage,
+    List<String>? interests,
     num? age,
   }) => ProfileUser(
     id: id ?? _id,
@@ -385,9 +380,9 @@ class ProfileUser {
   String? get email => _email;
   String? get dob => _dob;
   String? get gender => _gender;
-  dynamic get bio => _bio;
-  dynamic get profileImage => _profileImage;
-  List<dynamic>? get interests => _interests;
+  String? get bio => _bio;
+  String? get profileImage => _profileImage;
+  List<String>? get interests => _interests;
   num? get age => _age;
 
   Map<String, dynamic> toJson() {
@@ -401,9 +396,7 @@ class ProfileUser {
     map['gender'] = _gender;
     map['bio'] = _bio;
     map['profile_image'] = _profileImage;
-    if (_interests != null) {
-      map['interests'] = _interests?.map((v) => v.toJson()).toList();
-    }
+    map['interests'] = _interests;
     map['age'] = _age;
     return map;
   }

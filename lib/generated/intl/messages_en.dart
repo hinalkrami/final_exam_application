@@ -61,6 +61,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "movie": MessageLookupByLibrary.simpleMessage("🎬 Movie"),
     "music": MessageLookupByLibrary.simpleMessage("🎵 Music"),
+    "noDataAvailable": MessageLookupByLibrary.simpleMessage(
+      "No data Available",
+    ),
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "profilePage": MessageLookupByLibrary.simpleMessage("Profile Page"),
     "profilePicture": MessageLookupByLibrary.simpleMessage("Profile picture"),

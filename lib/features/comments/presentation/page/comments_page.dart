@@ -1,5 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:final_exam_application/core/Exception/app_exception.dart';
+import 'package:final_exam_application/features/auth/presentation/widgets/custom_widgets.dart';
+import 'package:final_exam_application/features/comments/data/model/add_comments_model.dart';
+import 'package:final_exam_application/features/comments/data/model/comments_model.dart';
 import 'package:final_exam_application/features/comments/presentation/providers/comments_provider.dart';
 import 'package:final_exam_application/features/profile/presentation/providers/profile_providers.dart';
 import 'package:final_exam_application/values/colors.dart';
@@ -50,7 +53,20 @@ class _CommentsPageState extends ConsumerState<CommentsPage> {
         message: () => ref.read(commentsProvider.notifier).message,
       );
     } catch (e) {
-      debugPrint('Comment page error:$e');
+      debugPrint('Comment page get comments error:$e');
+    }
+  }
+
+  Future<void> addComments(int id, AddCommentsModel user) async {
+    try {
+      AppException.handleApiCall(
+        context: context,
+        apiCall: () async => await ref.read(commentsProvider.notifier).addComments(id, user),
+        statusCode: () => ref.read(commentsProvider.notifier).statusCode,
+        message: () => ref.read(commentsProvider.notifier).message,
+      );
+    } catch (e) {
+      debugPrint('Comment page add comments error:$e');
     }
   }
 
@@ -74,7 +90,7 @@ class _CommentsPageState extends ConsumerState<CommentsPage> {
         data: (data) {
           final comments = data.data?.comments;
           if (comments == null) {
-            return Center(child: Text('No data Available'));
+            return Center(child: Text(S.of(context).noDataAvailable));
           }
           return Column(
             children: [
@@ -91,7 +107,7 @@ class _CommentsPageState extends ConsumerState<CommentsPage> {
                   physics: BouncingScrollPhysics(),
                   itemBuilder: (context, index) => customListTile(
                     image: CachedNetworkImageProvider(comments[index].user!.profileImage!),
-                    name: 'Jacob jones',
+                    name: comments[index].user!.fullName ?? 'No Name ',
                     timing: comments[index].commentTiming,
                     comment: comments[index].comment!,
                   ),
@@ -137,12 +153,22 @@ class _CommentsPageState extends ConsumerState<CommentsPage> {
             ),
           ),
           FloatingActionButton(
-            onPressed: () {},
+            onPressed: () {
+              addComments(
+                widget.id!,
+                AddCommentsModel(
+                  userId: commentData.value!.data!.comments![0].user!.id!,
+                  comment: commentController.text,
+                ),
+              );
+            },
             backgroundColor: AppColors.primaryColor,
             elevation: 0,
             mini: true,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-            child: SvgPicture.asset(Assets.icons.sendIcon.path),
+            child: commentData.isLoading
+                ? CustomWidgets.circularIndicator()
+                : SvgPicture.asset(Assets.icons.sendIcon.path),
           ),
         ],
       ).wrapPaddingOnly(left: 30.w),

@@ -50,6 +50,41 @@ class _CommentsApi implements CommentsApi {
     return _value;
   }
 
+  @override
+  Future<UserResultModel<CommentsModel>> addComments(
+    int? id,
+    AddCommentsModel? commentedUser,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(commentedUser?.toJson() ?? <String, dynamic>{});
+    final _options = _setStreamType<UserResultModel<CommentsModel>>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/social/posts//${id}/addComment',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late UserResultModel<CommentsModel> _value;
+    try {
+      _value = UserResultModel<CommentsModel>.fromJson(
+        _result.data!,
+        (json) => CommentsModel.fromJson(json as Map<String, dynamic>),
+      );
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options, response: _result);
+      rethrow;
+    }
+    return _value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||

@@ -20,8 +20,8 @@ class AuthProvider extends AsyncNotifier<UserResultModel> {
     throw UnimplementedError();
   }
 
-  late int statusCode = state.value!.statusCode ?? 0;
-  late String message = state.value!.message ?? '';
+  late int statusCode = state.value?.statusCode ?? 0;
+  late String message = state.value?.message ?? '';
   Future<UserResultModel> loginData(LoginModel? loginUser) async {
     state = AsyncValue.loading();
     state = await AsyncValue.guard(() async => await ref.read(repositoryProvider).login(loginUser));

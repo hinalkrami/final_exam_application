@@ -14,8 +14,8 @@ class Validators {
   RegExp email = RegExp(r'^[a-z0-9]+@[a-z]+\.[a-z]+$');
   late List<TextInputFormatter>? nameFormatter = [FilteringTextInputFormatter.allow(name)];
   late List<TextInputFormatter>? numberFormatter = [
-    FilteringTextInputFormatter.deny(symbols),
-    LengthLimitingTextInputFormatter(13),
+    FilteringTextInputFormatter.digitsOnly,
+    LengthLimitingTextInputFormatter(10),
   ];
   late List<TextInputFormatter>? ageFormatter = [
     FilteringTextInputFormatter.digitsOnly,

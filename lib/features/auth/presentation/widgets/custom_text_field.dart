@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:countrify/countrify.dart';
 import 'package:final_exam_application/values/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,6 +23,9 @@ class CustomTextField extends StatelessWidget {
     this.onTap,
     this.readOnly = false,
     this.initValue,
+    this.initialCountryCode,
+    this.showDropdownIcon = true,
+    this.dividerColor,
   });
   TextEditingController? controller;
   String? hintText;
@@ -35,35 +39,66 @@ class CustomTextField extends StatelessWidget {
   void Function()? onTap;
   bool readOnly;
   String? initValue;
+  CountryCodeEnum? initialCountryCode;
+  bool showDropdownIcon;
+  Color? dividerColor;
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      readOnly: readOnly,
-      controller: controller,
-      cursorColor: Colors.black,
-      style: AppTextStyle.regularText,
-      inputFormatters: inputFormatter,
-      initialValue: initValue,
-      textCapitalization: .words,
-      onTap: onTap,
-      autovalidateMode: isValidate ?? false ? .onUserInteraction : null,
-      validator: validator ?? customValidator.basicValidation,
-      keyboardType: keyboardType,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.fromLTRB(15.w, 10.h, 0, 0),
-        hintText: hintText,
-        border: UnderlineInputBorder(borderRadius: BorderRadius.circular(10)),
-        enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.black87),
-          borderRadius: BorderRadius.circular(5),
-        ),
-        focusedBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.black87),
-          borderRadius: BorderRadius.circular(5),
-        ),
-        suffixIcon: SvgPicture.asset(suffixIcon!, fit: .scaleDown),
-      ),
-    );
+    return keyboardType == .phone
+        ? PhoneNumberField(
+            controller: controller,
+            initialCountryCode: initialCountryCode,
+            showFlag: false,
+            inputFormatters: inputFormatter,
+            validator: validator ?? customValidator.basicValidation,
+            showDropdownIcon: showDropdownIcon,
+            style: CountrifyFieldStyle(
+              dividerColor: dividerColor,
+              contentPadding: EdgeInsets.fromLTRB(15.w, 10.h, 0, 0),
+              hintText: hintText,
+              border: UnderlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.black87),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.black87),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              errorBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.red.shade900),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              suffixIcon: SvgPicture.asset(suffixIcon!, fit: .scaleDown),
+            ),
+          )
+        : TextFormField(
+            readOnly: readOnly,
+            controller: controller,
+            cursorColor: Colors.black,
+            style: AppTextStyle.regularText,
+            inputFormatters: inputFormatter,
+            initialValue: initValue,
+            textCapitalization: .words,
+            onTap: onTap,
+            autovalidateMode: isValidate ?? false ? .onUserInteraction : null,
+            validator: validator ?? customValidator.basicValidation,
+            keyboardType: keyboardType,
+            decoration: InputDecoration(
+              contentPadding: EdgeInsets.fromLTRB(15.w, 10.h, 0, 0),
+              hintText: hintText,
+              border: UnderlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.black87),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.black87),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              suffixIcon: SvgPicture.asset(suffixIcon!, fit: .scaleDown),
+            ),
+          );
   }
 }

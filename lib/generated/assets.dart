@@ -17,6 +17,12 @@ class $AssetsImagesGen {
   final SvgGenImage bgHeart = const SvgGenImage('assets/images/bg_heart.svg');
   final SvgGenImage likeComments = const SvgGenImage('assets/images/like_comments.svg');
   final SvgGenImage logo = const SvgGenImage('assets/images/logo.svg');
+  final AssetGenImage onboardingScreen1Image1 = const AssetGenImage(
+    'assets/images/onboarding_screen1_image1.png',
+  );
+  final AssetGenImage onboardingScreen1Image2 = const AssetGenImage(
+    'assets/images/onboarding_screen1_image2.png',
+  );
   final SvgGenImage profileBgCircle = const SvgGenImage('assets/images/profile_bg_circle.svg');
   final AssetGenImage profileImage = const AssetGenImage('assets/images/profile_image.jpg');
   final AssetGenImage profileImage1 = const AssetGenImage('assets/images/profile_image_1.jpg');
@@ -55,6 +61,7 @@ class $AssetsIconsGen {
   final SvgGenImage location = const SvgGenImage('assets/icons/location.svg');
   final SvgGenImage nextIcon = const SvgGenImage('assets/icons/next_icon.svg');
   final SvgGenImage phoneIcon = const SvgGenImage('assets/icons/phone_icon.svg');
+  final SvgGenImage pickImageIcon = const SvgGenImage('assets/icons/pick_image_icon.svg');
   final SvgGenImage playIcon = const SvgGenImage('assets/icons/play_icon.svg');
   final SvgGenImage sendIcon = const SvgGenImage('assets/icons/send_icon.svg');
   final SvgGenImage userIcon = const SvgGenImage('assets/icons/user_icon.svg');

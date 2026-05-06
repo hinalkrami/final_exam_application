@@ -2,14 +2,21 @@ import 'package:final_exam_application/core/config/app_router_path.dart';
 import 'package:final_exam_application/features/auth/presentation/page/login_page.dart';
 import 'package:final_exam_application/features/auth/presentation/page/sign_up_page.dart';
 import 'package:final_exam_application/features/comments/presentation/page/comments_page.dart';
+import 'package:final_exam_application/features/onboarding/presentation/page/onboarding_page.dart';
 import 'package:final_exam_application/features/profile/presentation/page/profile_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
   return GoRouter(
-    initialLocation: AppRouterPath.login,
+    initialLocation: AppRouterPath.onboarding,
     routes: <RouteBase>[
+      GoRoute(
+        path: AppRouterPath.onboarding,
+        name: 'onboarding',
+        builder: (context, state) => OnboardingPage(),
+      ),
+
       GoRoute(path: AppRouterPath.login, name: 'login', builder: (context, state) => LoginPage()),
       GoRoute(
         path: AppRouterPath.signUp,

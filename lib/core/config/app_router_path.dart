@@ -5,4 +5,5 @@ class AppRouterPath {
   static String profile = '/profile';
 
   static String comments = '/comments/:id';
+  static String onboarding = '/onboarding';
 }
